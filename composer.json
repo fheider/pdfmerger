@@ -1,0 +1,33 @@
+{
+  "name": "fheider/pdfmerger",
+  "description": "Lib to merge multiple pdf",
+  "type": "library",
+  "keywords": [
+    "php",
+    "pdf",
+    "pdf merge",
+    "pdf concat"
+  ],
+  "homepage": "https://github.com/fheider/pdfmerger",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Frank Heider",
+      "homepage": "https://github.com/fheider"
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/fheider/pdfmerger/issues",
+    "source": "https://github.com/fheider/pdfmerger"
+  },
+  "require": {
+    "php": ">=5.6.0",
+    "tecnickcom/tcpdf": "dev-master",
+    "propa/tcpdi": "dev-master"
+  },
+  "autoload": {
+    "psr-4": {
+      "PdfMerger\\": "src"
+    }
+  }
+}

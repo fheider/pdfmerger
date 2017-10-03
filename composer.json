@@ -31,5 +31,5 @@
       "PDFMerger\\": "src"
     }
   },
-  "minimum-stability": "rc"
+  "minimum-stability": "RC"
 }

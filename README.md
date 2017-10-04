@@ -1,4 +1,4 @@
-#PDFMerger for PHP
+# PDFMerger for PHP
 Simple PHP class for merging multiple PDF to one single PDF
 
 ### Installation

@@ -30,9 +30,10 @@ $pdf = new Pdf();
 Add multiple PDFs. It is possible to extract single pages or page ranges.
 
 ```php
-$pdf->add('files/1.pdf');           // -- merge all pages
-$pdf->add('files/2.pdf', [2]);      // -- merge only page 2
-$pdf->add('files/3.pdf', [2-5]);    // -- merge page 2 to 5
+$pdf->add('files/1.pdf');             // -- merge all pages
+$pdf->add('files/2.pdf', [2]);        // -- merge only page 2
+$pdf->add('files/3.pdf', [2-5]);      // -- merge page 2 to 5
+$pdf->add('files/4.pdf', [1, 3-5]);   // -- merge page 1 and 3 to 5
 ```
 
 Output the merged PDF.

@@ -1,4 +1,5 @@
 <?php
+
 namespace PDFMerger;
 
 use setasign\Fpdi\Fpdi;
@@ -18,7 +19,7 @@ class Pdf
      * Pdf constructor
      *
      */
-    public function __construct ()
+    public function __construct()
     {
         $this->_pdf = new Fpdi();
     }
@@ -29,14 +30,13 @@ class Pdf
      * @param string $filename Filename of the source file
      * @param mixed $pages Range of files (if not set, all pages where imported)
      */
-    public function add($filename, $pages = [])
+    public function add($filename, $pages = [], $orientation = '', $size = '', $rotation = 0)
     {
-        if (file_exists($filename))
-        {
+        if (file_exists($filename)) {
             $pageCount = $this->_pdf->setSourceFile($filename);
             for ($i = 1; $i <= $pageCount; $i++) {
                 if ($this->_isPageInRange($i, $pages)) {
-                    $this->_addPage($i);
+                    $this->_addPage($i, $orientation = '', $size = '', $rotation = 0);
                 }
             }
         }
@@ -81,10 +81,10 @@ class Pdf
      * @param $pageNumber
      * @throws \setasign\Fpdi\PdfReader\PdfReaderException
      */
-    private function _addPage($pageNumber)
+    private function _addPage($pageNumber, $orientation = '', $size = '', $rotation = 0)
     {
         $pageId = $this->_pdf->importPage($pageNumber);
-        $this->_pdf->addPage();
+        $this->_pdf->addPage($orientation = '', $size = '', $rotation = 0);
         $this->_pdf->useImportedPage($pageId);
     }
 
@@ -131,7 +131,5 @@ class Pdf
         }
 
         return range($value[0] > $value[1] ? $value[1] : $value[0], $value[0] > $value[1] ? $value[0] : $value[1]);
-
     }
-
 }
